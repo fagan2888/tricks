@@ -14,10 +14,32 @@ output:
 knitr::opts_chunk$set(message=FALSE, warning=FALSE)
 ```
 
+# CHUNK OPTIONS knitr
+{..., eval = TRUE} # whether to evaluate the code chunk, it can also be numeric vector selecting which expression inside the chunk is executed c(1,3,4) or -(4:5)
+{..., echo = FALSE} # hide code, it can also be numeric vector selecting which expression inside the chunk is executed c(1,3,4) or -(4:5)
+{..., results='asis'} # output as text (instead of as console output), also "markup" (Sweave verbatim), "hide"
+{..., warning = T} # preserve warnings? warning()
+{..., error = T} # preserve errors? stop()
+{..., message = T} # preserve messages? message()
+{..., split = F} # split output into separate files?
+{..., include = T} # execute it but include (or not) the chunk output in the final document (for example, generate the images)
+{..., engine="bash"} # execute bash, python, awk, ruby, instead of R
+
+# CHUNK OPTIONS code
+{..., tidy = T} # tidy up R code
+{..., comment=""} # remove any preceding text from console output, default =="##"
+{..., prompt = F} # show prompt chars
+{..., highlight = T} # highlight the source code?
+{..., size='normalsize'} # default latex font size
+{..., background='#F7F7F7'} # default latex background color
+
+# CHUNK OPTIONS cache
+{..., cache = TRUE} # only run the first time, delete the contents of the cache folder to rerun everything
+{..., cache.path='cache/'} # cache dir
+{..., dependson = NULL} # char vector of chunk labels (or numeric)
+
 # Concat file path with file name
 source(file.path(path.to.dir, "file.R"))
-
-
 
 # Scatter plot with correlation statistics
 scatter.plot = function(df, x_, y_, xlab_="", ylab_="") {
