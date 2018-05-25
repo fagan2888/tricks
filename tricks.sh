@@ -2,7 +2,7 @@
 qsub -P montilab -e std.err -o std.out run.qsub
 
 # Submit qsub job with more resources
-qsub -P <project> -l h_rt=96:00:00 -l mem_total=94G -pe omp 16 -e std.err -o std.out run.qsub
+qsub -P montilab -l h_rt=96:00:00 -l mem_total=94G -pe omp 16 -e std.err -o std.out run.qsub
 
 # Get job information for a specific job
 qstat -u 52104
