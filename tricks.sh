@@ -1,3 +1,9 @@
+# File permissions
+chmod 444 sample.txt # owner | r    /  other | r
+chmod 700 sample.txt # owner | rwx  /  other |
+chmod 744 sample.txt # owner | rwx  /  other | r
+chmod 777 sample.txt # owner | rwx  /  other | rwx
+
 # Submit basic qsub job
 qsub -P montilab -e std.err -o std.out run.qsub
 
