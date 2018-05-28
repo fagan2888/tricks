@@ -25,3 +25,19 @@ df = pd.DataFrame({**df1.to_dict(), **df2.to_dict()})
 
 # Pandas sort index in place
 df.sort_index(inplace=True)
+
+# Persistent data scraping/collection
+def refresh():
+    try:
+        data.update()
+    except Exception as e:
+        pass     
+schedule.every(30).minutes.do(refresh)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+    
+    
+    
+    
+    
