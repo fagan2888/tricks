@@ -26,6 +26,12 @@ df = pd.DataFrame({**df1.to_dict(), **df2.to_dict()})
 # Pandas sort index in place
 df.sort_index(inplace=True)
 
+# Pandas replace
+df.disease = df_clean.disease.replace(to_replace="control", value='healthy')
+
+# Pandas lambda function
+df.tissue  = df.tissue.apply(lambda x: x.lower())
+
 # Persistent data scraping/collection
 def refresh():
     try:
@@ -36,8 +42,3 @@ schedule.every(30).minutes.do(refresh)
 while True:
     schedule.run_pending()
     time.sleep(1)
-    
-    
-    
-    
-    
