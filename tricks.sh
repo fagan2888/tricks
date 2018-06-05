@@ -21,3 +21,16 @@ qdel -j 52104
 
 # Delete all jobs current jobs by user
 qdel -u anfed
+
+# Find a past command with nextflow in it
+history | grep nextflow
+
+# List all files, in long formated, sorted by size (asc and desc)
+ls –alS
+ls –alSr
+
+# Append a file to end of another
+cat chr17.fasta >> hg38.fasta
+
+# Display lines starting with @
+grep “^@*” counts.txt
