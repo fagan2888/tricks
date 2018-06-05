@@ -26,6 +26,9 @@ df = pd.DataFrame({**df1.to_dict(), **df2.to_dict()})
 # Pandas sort index in place
 df.sort_index(inplace=True)
 
+# Drop cols with all 0s
+df = df.loc[:, (df != 0).any(axis=0)]
+
 # Pandas replace
 df.disease = df_clean.disease.replace(to_replace="control", value='healthy')
 
@@ -42,3 +45,8 @@ schedule.every(30).minutes.do(refresh)
 while True:
     schedule.run_pending()
     time.sleep(1)
+
+# Iterate through directories    
+for fn in os.listdir(pathtodir):
+    with open(os.path.join(pathtodir, fn) as infile:
+                  
