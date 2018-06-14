@@ -50,3 +50,5 @@ while True:
 for fn in os.listdir(pathtodir):
     with open(os.path.join(pathtodir, fn) as infile:
                   
+# Sort dictionary by value
+c = sorted(c.items(), key=lambda x: -x[1])
