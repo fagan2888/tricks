@@ -60,3 +60,11 @@ scatter.plot = function(df, x_, y_, xlab_="", ylab_="") {
 # Get and set env variables in R
 Sys.getenv("envar")
 Sys.setenv(envar="")
+
+# Knit markdown files on SCC
+module load R/3.4.2; R
+$SCC_PANDOC_DIR # Get the output of this
+Sys.setenv(RSTUDIO_PANDOC="/share/pkg/pandoc/2.2.1")
+rmarkdown::render('markdown.file.Rmd')
+
+
