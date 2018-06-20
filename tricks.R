@@ -56,3 +56,7 @@ scatter.plot = function(df, x_, y_, xlab_="", ylab_="") {
     annotate("text", x=minx, y=maxy, label=text, size = 3)
   p1
 }
+
+# Get and set env variables in R
+Sys.getenv("envar")
+Sys.setenv(envar="")
