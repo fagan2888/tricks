@@ -7,6 +7,7 @@ output:
   html_document:
     theme: united
     toc: yes
+    code_folding: hide
   html_notebook:
     toc: yes
 ---
