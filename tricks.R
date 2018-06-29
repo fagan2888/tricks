@@ -2,6 +2,7 @@
 ---
 title: "Project Title"
 author: "Anthony Federico"
+date: "`r Sys.Date()`"
 output:
   html_document:
     theme: united
