@@ -59,6 +59,10 @@ scatter.plot = function(df, x_, y_, xlab_="", ylab_="") {
   p1
 }
 
+# Install package from github
+library(devtools)
+install_github("username/repository")
+
 # Get and set env variables in R
 Sys.getenv("envar")
 Sys.setenv(envar="")
@@ -70,4 +74,7 @@ module load R/3.4.2; R
 Sys.setenv(RSTUDIO_PANDOC="/share/pkg/pandoc/2.2.1")
 rmarkdown::render('markdown.file.Rmd')
 
-
+# Install package to specific directory
+with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install_github("username/repository"))
+with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install.packages("package"))
+library(package, lib.loc="/usr3/graduate/anfed/R_pkgs/") # Load it
