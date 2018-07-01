@@ -64,8 +64,9 @@ Sys.getenv("envar")
 Sys.setenv(envar="")
 
 # Knit markdown files on SCC
-module load R/3.4.2; R
 $SCC_PANDOC_DIR # Get the output of this
+module load R/3.4.2; R
+module load pandoc/2.2.1
 Sys.setenv(RSTUDIO_PANDOC="/share/pkg/pandoc/2.2.1")
 rmarkdown::render('markdown.file.Rmd')
 
