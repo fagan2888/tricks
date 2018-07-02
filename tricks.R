@@ -78,3 +78,13 @@ rmarkdown::render('markdown.file.Rmd')
 with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install_github("username/repository"))
 with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install.packages("package"))
 library(package, lib.loc="/usr3/graduate/anfed/R_pkgs/") # Load it
+
+# Apply function to a list
+is.this <- function(x) {
+  if (x == this) {
+    return(F)
+  } else {
+    return(T)
+  }
+}
+blist <- lapply(alist, function(x) is.this(x))
