@@ -7,12 +7,21 @@ pickle.dump(df, open("df.pkl","wb"))
 # Pickle load
 df = pickle.load(open("df.pkl","rb"))
 
+# Pickling in py3/py2
+with open('df.pkl3', 'rb') as handle: # Open in py3
+    df = pickle.load(handle)
+pickle.dump(df, open("df.pkl2", "wb"), protocol=2) # Save for py2
+
 # Request data
 response = requests.get(url)
 data = response.json()
 
 # Pandas to datetime
 df.date = pd.to_datetime(df.date, unit='ms')
+
+# Pandas subset columns
+df = df[["col1", "col2"]]
+df = df[[df.columns[1:3]]]
 
 # Pandas colbind
 df = pd.concat([df1, df2], axis=1)
