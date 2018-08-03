@@ -1,2 +1,13 @@
+# Install python
+sudo yum update
 sudo yum install python36
-sudo /usr/bin/pip-3.6 install
+
+# Setup virtual environment
+mkdir venv
+cd venv
+virtualenv -p /usr/bin/python3.6 python36
+source /home/ec2-user/venv/python36/bin/activate
+deactivate
+
+# Activate virtual environment when logging in
+echo "source /home/ec2-user/venv/python36/bin/activate" >> /home/ec2-user/.bashrc
