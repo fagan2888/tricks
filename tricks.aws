@@ -1,0 +1,2 @@
+sudo yum install python36
+sudo /usr/bin/pip-3.6 install
