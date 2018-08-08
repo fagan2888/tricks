@@ -34,3 +34,6 @@ cat chr17.fasta >> hg38.fasta
 
 # Display lines starting with @
 grep “^@*” counts.txt
+
+# A better version of tail -f
+less +F file.txt
