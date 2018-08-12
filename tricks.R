@@ -75,9 +75,14 @@ Sys.setenv(RSTUDIO_PANDOC="/share/pkg/pandoc/2.2.1")
 rmarkdown::render('markdown.file.Rmd')
 
 # Install package to specific directory
+# From Github
 withr::with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install_github("username/repository"))
+# From Cran/Bioconductor
 withr::with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install.packages("package"))
-library(package, lib.loc="/usr3/graduate/anfed/R_pkgs/") # Load it
+# From source
+withr::with_libpaths(new="/usr3/graduate/anfed/R_pkgs/", install.packages("/usr3/graduate/anfed/R_src/package.tar.gz", type="source"))
+# Load it
+library(package, lib.loc="/usr3/graduate/anfed/R_pkgs/")
 
 # Apply function to a list
 is.this <- function(x) {
