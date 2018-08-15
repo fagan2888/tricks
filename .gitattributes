@@ -1,0 +1,2 @@
+*.aws linguist-language=Shell
+*.git linguist-language=Shell
