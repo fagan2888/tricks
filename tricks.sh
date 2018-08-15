@@ -37,3 +37,6 @@ grep “^@*” counts.txt
 
 # A better version of tail -f
 less +F file.txt
+
+# Open crontab in nano
+export VISUAL=nano; crontab -e
