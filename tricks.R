@@ -93,3 +93,16 @@ is.this <- function(x) {
   }
 }
 blist <- lapply(alist, function(x) is.this(x))
+
+# Detect number of cores
+library(parallel)
+cpus <- detectCores()
+
+
+
+
+
+
+
+
+     
