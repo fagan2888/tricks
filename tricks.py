@@ -61,3 +61,7 @@ for fn in os.listdir(pathtodir):
                   
 # Sort dictionary by value
 c = sorted(c.items(), key=lambda x: -x[1])
+
+# Multi conditional slicing
+df = df[('col1' > 5) | ('col2' == 3)]
+df = df[('col1' > 5) & ('col2' == 3)]
