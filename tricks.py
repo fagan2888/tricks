@@ -32,6 +32,10 @@ df = pd.concat([df1, df2])
 # Pandas rowbind, delete duplicates, replace missing vals with NaN
 df = pd.DataFrame({**df1.to_dict(), **df2.to_dict()})
 
+# Pandas multi-conditional slicing
+df = df[('col1' > 5) | ('col2' == 3)]
+df = df[('col1' > 5) & ('col2' == 3)]
+
 # Pandas sort index in place
 df.sort_index(inplace=True)
 
@@ -61,7 +65,3 @@ for fn in os.listdir(pathtodir):
                   
 # Sort dictionary by value
 c = sorted(c.items(), key=lambda x: -x[1])
-
-# Multi conditional slicing
-df = df[('col1' > 5) | ('col2' == 3)]
-df = df[('col1' > 5) & ('col2' == 3)]
