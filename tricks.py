@@ -46,7 +46,7 @@ df = df.loc[:, (df != 0).any(axis=0)]
 df.disease = df_clean.disease.replace(to_replace="control", value='healthy')
 
 # Pandas lambda function
-df.tissue  = df.tissue.apply(lambda x: x.lower())
+df.tissue = df.tissue.apply(lambda x: x.lower())
 
 # Persistent data scraping/collection
 def refresh():
@@ -65,3 +65,7 @@ for fn in os.listdir(pathtodir):
                   
 # Sort dictionary by value
 c = sorted(c.items(), key=lambda x: -x[1])
+              
+# Figure control
+fig, ax = pyplot.subplots(figsize=(14,8))
+sns.barplot(x="x", y="y", hue="col", data=df, ax=ax)
