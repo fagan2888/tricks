@@ -1,2 +1,3 @@
 *.aws linguist-language=Shell
 *.git linguist-language=Shell
+*.docker linguist-language=Shell
