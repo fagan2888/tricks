@@ -24,12 +24,12 @@ source activate pipeliner
 
 # while in the docker image, grab the id (looks like c16378f943fe)
 # Create a new repository with updated conda environment (copy)
-$ docker commit c16378f943fe <repository>
+docker commit c16378f943fe <repository>
 
-$ docker login
-$ docker images
-$ docker tag bb38976d03cf anfederico/pipeliner:<repository>
-$ docker push anfederico/pipeliner
+docker login
+docker images
+docker tag bb38976d03cf anfederico/pipeliner:<repository>
+docker push anfederico/pipeliner
 
 # To download on new computer
-$ docker pull anfederico/<repository>
+docker pull anfederico/<repository>
