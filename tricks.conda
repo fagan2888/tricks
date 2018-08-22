@@ -1,1 +1,7 @@
-
+# Upload package binaries to anaconda cloud account
+anaconda login
+path="/Users/anthonyfederico/miniconda2/pkgs/"
+for file in ${path}*.tar.bz2; do
+    #echo ${path}${file##*/}
+    anaconda upload ${path}${file##*/}
+done
