@@ -4,6 +4,10 @@ chmod 700 sample.txt # owner | rwx  /  other |
 chmod 744 sample.txt # owner | rwx  /  other | r
 chmod 777 sample.txt # owner | rwx  /  other | rwx
 
+# Modify file permissions of many sub files and directories
+find ./ -type f -exec chmod 644 {} \;
+find ./ -type d -exec chmod 755 {} \;
+
 # Submit basic qsub job
 qsub -P montilab -e std.err -o std.out run.qsub
 
