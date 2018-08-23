@@ -42,11 +42,21 @@ df.sort_index(inplace=True)
 # Drop cols with all 0s
 df = df.loc[:, (df != 0).any(axis=0)]
 
+# Drop a feature
+df = df.drop('feature', axis=1)
+
 # Pandas replace
 df.disease = df_clean.disease.replace(to_replace="control", value='healthy')
 
 # Pandas lambda function
 df.tissue = df.tissue.apply(lambda x: x.lower())
+
+# Pandas Apply function
+def multiply(x): return x * 2
+df.height = df.height.apply(multiply)
+
+# Pandas rename column
+df = df.rename(columns = {df.columns[2]:'col'}, inplace=True)
 
 # Persistent data scraping/collection
 def refresh():
