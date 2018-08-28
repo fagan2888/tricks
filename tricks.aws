@@ -11,3 +11,6 @@ deactivate
 
 # Activate virtual environment when logging in
 echo "source /home/ec2-user/venv/python36/bin/activate" >> /home/ec2-user/.bashrc
+
+# Necessary dependency for many packages to be installed 
+sudo yum install -y python36-devel.x86_64
