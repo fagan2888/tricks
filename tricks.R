@@ -98,11 +98,8 @@ blist <- lapply(alist, function(x) is.this(x))
 library(parallel)
 cpus <- detectCores()
 
-
-
-
-
-
-
-
-     
+# Iterate through all files in directory
+files <- list.files(path=path.to.dir, pattern="*.pattern", full.names=TRUE, recursive=FALSE)
+lapply(files, function(fn) {
+  do.something(fn)
+})
