@@ -16,6 +16,32 @@ pickle.dump(df, open("df.pkl2", "wb"), protocol=2) # Save for py2
 response = requests.get(url)
 data = response.json()
 
+# Pandas settings
+options = {
+    'display': {
+        'max_columns'   : 10,
+        'max_colwidth'  : 25,
+        'max_rows'      : 14,
+        'max_seq_items' : 50,
+        'precision'     : 4,
+    }
+}
+for category, option in options.items():
+    for op, value in option.items():
+        pd.set_option(f'{category}.{op}', value)
+
+# Pandas reading in data
+cols = ['col1', 'col2', 'col3']
+df = pd.read_csv("data.csv", usecols=[0, 1, 2], names=cols)
+
+# Pandas simulated timeseries data
+import pandas.util.testing as tm
+tm.N, tm.K = 15, 3  # Number of rows/columns
+df = tm.makeTimeDataFrame(freq='M')
+
+# Pandas load data from your clipboard
+df = pd.read_clipboard()
+
 # Pandas to datetime
 df.date = pd.to_datetime(df.date, unit='ms')
 
