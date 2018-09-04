@@ -105,3 +105,11 @@ c = sorted(c.items(), key=lambda x: -x[1])
 # Figure control
 fig, ax = pyplot.subplots(figsize=(14,8))
 sns.barplot(x="x", y="y", hue="col", data=df, ax=ax)
+
+# Slack webhooks
+def send_to_hook(msg):
+    webhook_url = 'https://hooks.slack.com/services/10250812/DAKJDLKSAJDAW98125DAK'
+    slack_data = {'text': '{0}'.format(msg)}
+    response = requests.post(
+        webhook_url, data=json.dumps(slack_data),
+        headers={'Content-Type': 'application/json'})
