@@ -113,3 +113,10 @@ def send_to_hook(msg):
     response = requests.post(
         webhook_url, data=json.dumps(slack_data),
         headers={'Content-Type': 'application/json'})
+
+# Pretty print a series of lists of varying lengths in table format
+def lists_to_table(*lists, spacing=10):
+    stfmt = '\t'.join(['{{{0}:{1}s}}'.format(i, spacing) 
+                       for i, _ in enumerate(lists)])
+    for i in itertools.zip_longest(*lists, fillvalue=''):
+        print(stfmt.format(*i))
