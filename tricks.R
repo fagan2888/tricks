@@ -103,3 +103,8 @@ files <- list.files(path=path.to.dir, pattern="*.pattern", full.names=TRUE, recu
 lapply(files, function(fn) {
   do.something(fn)
 })
+
+# Lookup tables
+x <- c("m", "f", "u", "f", "f", "m", "m")
+lookup <- c(m = "Male", f = "Female", u = NA)
+unname(lookup[x])
