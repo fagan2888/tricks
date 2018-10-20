@@ -44,3 +44,11 @@ less +F file.txt
 
 # Open crontab in nano
 export VISUAL=nano; crontab -e
+
+# Disk usage
+quota anfed
+pquota -u montilab-p
+
+# Groups
+groups anfed
+
