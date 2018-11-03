@@ -11,6 +11,9 @@ find ./ -type d -exec chmod 755 {} \;
 # Submit basic qsub job
 qsub -P montilab -e std.err -o std.out run.qsub
 
+# Join stderr and stdout
+qsub -P montilab -o std.out -j y run.qsub
+
 # Submit qsub job with more resources
 qsub -P montilab -l h_rt=96:00:00 -l mem_total=94G -pe omp 16 -e std.err -o std.out run.qsub
 
@@ -51,4 +54,14 @@ pquota -u montilab-p
 
 # Groups
 groups anfed
+
+# Rstudo server
+ssh anfed@scc4.bu.edu -L 1234:localhost:8787
+http://localhost:1234/
+
+# Screen sharing tunnel
+ssh anfed@scc4.bu.edu
+vncstart
+ssh anfed@scc4.bu.edu -L 1234:localhost:5915 # Local
+vnc://localhost:1234
 
