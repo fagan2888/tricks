@@ -2,3 +2,5 @@
 *.git linguist-language=Shell
 *.docker linguist-language=Shell
 *.conda linguist-language=Shell
+*.bash_profile linguist-language=Shell
+*.bashrc linguist-language=Shell
