@@ -65,3 +65,5 @@ vncstart
 ssh anfed@scc4.bu.edu -L 1234:localhost:5915 # Local
 vnc://localhost:1234
 
+# Interactive qsub
+qrsh -P montilab-p -l h_rt=24:00:00 -pe omp 4
