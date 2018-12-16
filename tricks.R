@@ -108,3 +108,14 @@ lapply(files, function(fn) {
 x <- c("m", "f", "u", "f", "f", "m", "m")
 lookup <- c(m = "Male", f = "Female", u = NA)
 unname(lookup[x])
+
+# Source all files in directory
+source.dir <- function(path, trace = TRUE, ...) {
+    for (nm in list.files(path, pattern = "\\.[RrSsQq]$")) {
+       if(trace) cat(nm,":")           
+       source(file.path(path, nm), ...)
+       if(trace) cat("\n")
+    }
+}
+   
+                
