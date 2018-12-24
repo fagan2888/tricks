@@ -106,6 +106,9 @@ c = sorted(c.items(), key=lambda x: -x[1])
 fig, ax = pyplot.subplots(figsize=(14,8))
 sns.barplot(x="x", y="y", hue="col", data=df, ax=ax)
 
+# Enumerate and zip
+for i, (a, b) in enumerate(zip(alist, blist))
+
 # Slack webhooks
 def send_to_hook(msg):
     webhook_url = 'https://hooks.slack.com/services/10250812/DAKJDLKSAJDAW98125DAK'
