@@ -1,6 +1,7 @@
 # Initalize R Markdown File
 ---
 title: "Project Title"
+subtitle: "Project Subtitle"
 author: "Anthony Federico"
 date: "Last Modified: `r Sys.Date()`"
 output:
