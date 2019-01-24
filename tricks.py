@@ -124,6 +124,24 @@ def lists_to_table(*lists, spacing=10):
     for i in itertools.zip_longest(*lists, fillvalue=''):
         print(stfmt.format(*i))
 
+# Benchmarking decorator
+def benchmark(func):
+    import time
+    
+    def wrapper():
+        start = time.time()
+        func()
+        end = time.time()
+        print('[*] Execution time: {} seconds.'.format(end-start))
+    return wrapper
+
+@benchmark
+def fetch_webpage():
+    import requests
+    webpage = requests.get('https://google.com')
+
+fetch_webpage()
+              
 # Try a function multiple times before accepting failure
 def retry(func):
     def retried_function(*args, **kwargs):
