@@ -136,11 +136,8 @@ def benchmark(func):
     return wrapper
 
 @benchmark
-def fetch_webpage():
-    import requests
-    webpage = requests.get('https://google.com')
-
-fetch_webpage()
+def do_something_expensive():
+    ...
               
 # Try a function multiple times before accepting failure
 def retry(func):
