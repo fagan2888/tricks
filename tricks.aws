@@ -14,3 +14,10 @@ echo "source /home/ec2-user/venv/python36/bin/activate" >> /home/ec2-user/.bashr
 
 # Necessary dependency for many packages to be installed 
 sudo yum install -y python36-devel.x86_64
+
+# Debian/Ubuntu setup
+apt install python3
+apt install python3-pip
+apt-get install build-essential
+apt-get install python3-dev 
+apt-get install python3-setuptools
