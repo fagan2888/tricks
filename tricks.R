@@ -8,9 +8,10 @@ output:
   html_document:
     theme: united
     toc: yes
+    toc_float: true
+    toc_depth: 1
     code_folding: hide
-  html_notebook:
-    toc: yes
+    df_print: paged
 ---
 
 ```{r global, echo=FALSE}
@@ -118,5 +119,14 @@ source.dir <- function(path, trace = TRUE, ...) {
        if(trace) cat("\n")
     }
 }
-   
-                
+
+# Python-like string formatting with one-based indexing
+format_str <- function(string, ...) {
+    args <- list(...)
+    for (i in 1:length(args)) {
+        pattern <- paste("\\{", i, "}", sep="")
+        replacement <- args[[i]]
+        string <- gsub(pattern, replacement, string)
+    }
+    return(string)
+}               
