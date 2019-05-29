@@ -21,3 +21,6 @@ git log
 
 # Git clone private repository
 git clone https://anfederico:<Personal Access Token>@github.com/account/repo.git
+
+# Host local jekyll site
+bundle exec jekyll serve
