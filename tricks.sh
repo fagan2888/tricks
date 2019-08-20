@@ -67,3 +67,14 @@ vnc://localhost:1234
 
 # Interactive qsub
 qrsh -P montilab-p -l h_rt=24:00:00 -pe omp 4
+
+# Project template
+function init_rproj() {
+    dir=${1:-.}
+    mkdir -p $dir/code
+    mkdir -p $dir/rmd
+    mkdir -p $dir/notebooks
+    mkdir -p $dir/raw-data
+    mkdir -p $dir/processed-data
+    mkdir -p $dir/wrappers
+}
